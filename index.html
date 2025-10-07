@@ -9,6 +9,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-container">
+      <div class="loading-logo">N</div>
+      <div class="loading-text">Loading...</div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
   <!-- Animated Background Elements -->
   <div class="particles">
     <div class="particle"></div>
@@ -52,6 +68,9 @@
             <a href="https://x.com/SKrishnaNivedi1" class="social-link" title="Twitter">
               <i class="fab fa-twitter"></i>
             </a>
+            <a href="Resume_Krishna Niveditha.pdf" class="social-link" title="Resume" target="_blank">
+              <i class="fas fa-file-pdf"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -66,9 +85,24 @@
         <div class="education-info">
           <h3>Education</h3>
           <div class="education-item">
-            <h4>University of Florida</h4>
-            <p>Master's in Computer Engineering</p>
-            <p class="duration">2023 - Present</p>
+            <div class="education-header">
+              <img src="uf-logo.png" alt="University of Florida" class="education-logo">
+              <div class="education-details">
+                <h4>University of Florida</h4>
+                <p>Master's in Computer Engineering</p>
+                <p class="duration">2023 - Present</p>
+              </div>
+            </div>
+          </div>
+          <div class="education-item">
+            <div class="education-header">
+              <img src="nitc-logo.png" alt="National Institute of Technology, Calicut" class="education-logo">
+              <div class="education-details">
+                <h4>National Institute of Technology, Calicut</h4>
+                <p>Btech EEE (Electrical and Electronics Engineering)</p>
+                <p class="duration">2018 - 2022</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -125,5 +159,33 @@
       <p>&copy; 2025, Niveditha</p>
     </footer>
   </div>
+
+  <script>
+    // Loading screen functionality
+    window.addEventListener('load', function() {
+      const loadingScreen = document.getElementById('loadingScreen');
+      
+      // Add a small delay to ensure smooth transition
+      setTimeout(() => {
+        loadingScreen.classList.add('fade-out');
+        
+        // Remove the loading screen from DOM after animation completes
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 800); // Match the CSS transition duration
+      }, 1500); // Show loading for at least 1.5 seconds for better UX
+    });
+
+    // Fallback: hide loading screen after 5 seconds regardless
+    setTimeout(() => {
+      const loadingScreen = document.getElementById('loadingScreen');
+      if (loadingScreen && !loadingScreen.classList.contains('fade-out')) {
+        loadingScreen.classList.add('fade-out');
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 800);
+      }
+    }, 5000);
+  </script>
 </body>
 </html>

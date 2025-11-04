@@ -179,19 +179,8 @@
                     <div class="preview-dot"></div>
                     <div class="preview-dot"></div>
                     <div class="preview-dot"></div>
-                    <div class="preview-url">crop-prediction-map-live-nine.vercel.app</div>
                   </div>
-                  <div class="preview-iframe-container">
-                    <iframe 
-                      src="https://crop-prediction-map-live-nine.vercel.app/" 
-                      class="preview-iframe"
-                      loading="lazy"
-                      title="AgriConnect Crop Prediction Preview"
-                      sandbox="allow-same-origin allow-scripts"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                    </iframe>
-                    <div class="preview-loading">Loading preview...</div>
-                  </div>
+                  <div class="preview-url">crop-prediction-map-live-nine.vercel.app</div>
                 </div>
               </div>
             </a>
@@ -225,19 +214,8 @@
                     <div class="preview-dot"></div>
                     <div class="preview-dot"></div>
                     <div class="preview-dot"></div>
-                    <div class="preview-url">firecrawl-agent-workflow-e7t8.vercel.app</div>
                   </div>
-                  <div class="preview-iframe-container">
-                    <iframe 
-                      src="https://firecrawl-agent-workflow-e7t8.vercel.app/" 
-                      class="preview-iframe"
-                      loading="lazy"
-                      title="Prompt-Driven AI Workflow Builder Preview"
-                      sandbox="allow-same-origin allow-scripts"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                    </iframe>
-                    <div class="preview-loading">Loading preview...</div>
-                  </div>
+                  <div class="preview-url">firecrawl-agent-workflow-e7t8.vercel.app</div>
                 </div>
               </div>
             </a>
@@ -294,37 +272,6 @@
         }, 800);
       }
     }, 5000);
-
-    // Handle iframe preview loading
-    document.addEventListener('DOMContentLoaded', function() {
-      const iframes = document.querySelectorAll('.preview-iframe');
-      
-      iframes.forEach(iframe => {
-        // Try to detect iframe load
-        const handleLoad = () => {
-          iframe.classList.add('loaded');
-          const loadingIndicator = iframe.nextElementSibling;
-          if (loadingIndicator && loadingIndicator.classList.contains('preview-loading')) {
-            loadingIndicator.style.display = 'none';
-          }
-        };
-
-        // Handle successful load
-        iframe.addEventListener('load', handleLoad);
-        
-        // Fallback: show iframe after timeout even if load event doesn't fire
-        // (some sites block iframe embedding, so load event might not fire)
-        setTimeout(() => {
-          if (!iframe.classList.contains('loaded')) {
-            iframe.classList.add('loaded');
-            const loadingIndicator = iframe.nextElementSibling;
-            if (loadingIndicator && loadingIndicator.classList.contains('preview-loading')) {
-              loadingIndicator.style.display = 'none';
-            }
-          }
-        }, 3000);
-      });
-    });
   </script>
 </body>
 </html>
